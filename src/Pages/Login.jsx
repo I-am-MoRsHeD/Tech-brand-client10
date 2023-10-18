@@ -2,10 +2,11 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { FaGoogle } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     const { signUser, signWithPopUp } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState();
 
     const handleLogin = e => {
@@ -15,12 +16,14 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password)
 
-        setError('')
+        setShowPassword('');
+        setError('');
 
         // signing user
         signUser(email, password)
             .then(result => {
                 console.log(result.user)
+                
                 // Swal.fire(
                 //     'Successfully logged in!',
                 //     'success'
@@ -52,15 +55,21 @@ const Login = () => {
                             <input
                                 type="email"
                                 name="email"
-                                placeholder="Email" className="input"
+                                placeholder="Email" className="input text-white"
                                 required />
                         </div>
                         <div className="form-control border-b-2">
                             <input
-                                type="password"
+                                type={showPassword ? "text": "password"}
                                 name="password"
                                 placeholder="Password"
-                                className="input" required />
+                                className="input text-white" required />
+                            <span className='absolute text-white lg:ml-[500px] mt-3' onClick={()=> setShowPassword(!showPassword)}>
+                                {
+                                    showPassword ? <FaEyeSlash></FaEyeSlash> : 
+                                    <FaEye></FaEye>
+                                }
+                            </span>
 
                         </div>
                         <div className='flex justify-between mt-4'>

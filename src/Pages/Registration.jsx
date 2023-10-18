@@ -3,11 +3,12 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
-import { FaGoogle } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 
 const Registration = () => {
     const [error, setError] = useState();
     const [success, setSuccess] = useState();
+    const [showPassword, setShowPassword] = useState(false);
     const { createUser, signWithPopUp, loading } = useContext(AuthContext);
 
     const handleRegister = e => {
@@ -17,6 +18,7 @@ const Registration = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        setShowPassword('')
         setSuccess('')
         setError('')
 
@@ -93,18 +95,23 @@ const Registration = () => {
                     <h2 className="text-4xl font-bold pl-10 mt-10">Create an account</h2>
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control mb-6 border-b-2">
-                            <input type="text" name="name" placeholder="Name" className="input" />
+                            <input type="text" name="name" placeholder="Name" className="input text-white" />
                         </div>
                         <div className="form-control mb-6 border-b-2">
-                            <input type="email" name="email" placeholder="Email" className="input" required />
+                            <input type="email" name="email" placeholder="Email" className="input text-white" required />
                         </div>
                         <div className="form-control border-b-2">
                             <input
-                                type="password"
+                                type={showPassword ? "text": "password"}
                                 name="password"
                                 placeholder="Password"
-                                className="input" required />
-
+                                className="input text-white" required />
+                            <span className='absolute text-white lg:ml-[500px] mt-3' onClick={() => setShowPassword(!showPassword)}>
+                                {
+                                    showPassword ? <FaEyeSlash></FaEyeSlash> :
+                                        <FaEye></FaEye>
+                                }
+                            </span>
                         </div>
                         <div>
                             {
