@@ -4,6 +4,7 @@ import Brands from '../Brands/Brands';
 import Banner from '../Banner/Banner';
 import Footer from '../Footer/Footer';
 import Branch from '../Branch/Branch';
+import Services from '../Services/Services';
 
 const Home = () => {
     const [brands, setBrands] = useState([]);
@@ -31,6 +32,7 @@ const Home = () => {
                 </div>
             </div>
             <Branch></Branch>
+            <Services></Services>
             <Footer></Footer>
         </div>
     );
