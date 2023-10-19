@@ -11,27 +11,29 @@ const AddProduct = () => {
         const type = form.type.value;
         const price = form.price.value;
         const rating = form.rating.value;
-        const products = {name, brand, photo, type, price, rating};
+        const desc = form.desc.value;
+        const products = { name, brand, photo,desc, type, price, rating };
         console.log(products)
 
         // sending data to the server
-        fetch('http://localhost:5000/products',{
+        fetch('http://localhost:5000/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(products)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                alert('Product added')
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    alert('Product added')
+                    form.reset();
+                }
+            })
     }
     return (
-        <div className='my-10 py-10 rounded-tl-full bg-cyan-600'>
+        <div className='my-10 py-10 text-white rounded-tl-full bg-cyan-600'>
             <h2 className="text-4xl mb-10 font-semibold text-center">Add a Product, <br /> Whatever you want</h2>
             <form onSubmit={handleAddProduct}>
                 <div className='w-5/6 flex my-10 gap-8 mx-auto '>
@@ -63,7 +65,9 @@ const AddProduct = () => {
                         <select name="type" id="type">
                             <option value="Mobile">Mobile</option>
                             <option value="Watch">Watch</option>
-                            <option value="Desktop">Desktop</option>
+                            <option value="Laptop">Laptop</option>
+                            <option value="Tablet">Tablet</option>
+                            <option value="Speaker">Speaker</option>
                         </select>
                     </div>
 
