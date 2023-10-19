@@ -1,11 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { signUser, signWithPopUp } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState();
 
@@ -23,11 +26,12 @@ const Login = () => {
         signUser(email, password)
             .then(result => {
                 console.log(result.user)
-                
-                // Swal.fire(
-                //     'Successfully logged in!',
-                //     'success'
-                // )
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Nice...',
+                    text: 'Logged in successfully!'
+                })
+                navigate(location.state ? location.state : '/')
             })
             .catch(error => {
                 console.log(error)
@@ -36,14 +40,14 @@ const Login = () => {
 
     }
 
-    const handleGoogle = () =>{
+    const handleGoogle = () => {
         signWithPopUp()
-        .then(result =>{
-            console.log(result.user)
-        })
-        .catch(error =>{
-            console.log(error)
-        })
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
     return (
         <div>
@@ -60,14 +64,14 @@ const Login = () => {
                         </div>
                         <div className="form-control border-b-2">
                             <input
-                                type={showPassword ? "text": "password"}
+                                type={showPassword ? "text" : "password"}
                                 name="password"
                                 placeholder="Password"
                                 className="input text-white" required />
-                            <span className='absolute text-white lg:ml-[500px] mt-3' onClick={()=> setShowPassword(!showPassword)}>
+                            <span className='absolute text-white lg:ml-[500px] mt-3' onClick={() => setShowPassword(!showPassword)}>
                                 {
-                                    showPassword ? <FaEyeSlash></FaEyeSlash> : 
-                                    <FaEye></FaEye>
+                                    showPassword ? <FaEyeSlash></FaEyeSlash> :
+                                        <FaEye></FaEye>
                                 }
                             </span>
 

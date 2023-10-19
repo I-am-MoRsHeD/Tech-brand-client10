@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const Registration = () => {
     const [error, setError] = useState();
@@ -71,7 +72,11 @@ const Registration = () => {
                     .then(data => {
                         console.log(data)
                         if (data.insertedId) {
-                            alert("user added")
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Nice...',
+                                text: 'User Created successfully!'
+                              })
                         }
                     })
             })

@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const AddProduct = () => {
     const handleAddProduct = e => {
@@ -12,7 +13,7 @@ const AddProduct = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const desc = form.desc.value;
-        const products = { name, brand, photo,desc, type, price, rating };
+        const products = { name, brand, photo, desc, type, price, rating };
         console.log(products)
 
         // sending data to the server
@@ -27,7 +28,11 @@ const AddProduct = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    alert('Product added')
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Nice...',
+                        text: 'Product added successfully!'
+                    })
                     form.reset();
                 }
             })

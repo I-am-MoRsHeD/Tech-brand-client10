@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateProduct = () => {
     const [product, setProduct] = useState([]);
@@ -26,6 +27,28 @@ const UpdateProduct = () => {
         const desc = form.desc.value;
         const updateProducts = { name, brand, photo,desc, type, price, rating };
         console.log(updateProducts)
+
+        // updated products
+        fetch(`http://localhost:5000/products/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateProducts)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Nice...',
+                        text: 'Product updated successfully!'
+                      })
+                }
+            })
+
+
     }
     return (
         <div className='my-10 py-10 text-white rounded-tr-full rounded-bl-full bg-violet-500'>

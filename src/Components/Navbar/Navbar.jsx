@@ -10,12 +10,8 @@ const Navbar = () => {
 
     const navlinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        {
-            user ? <>
-                <li><NavLink to='/addproduct'>Add Product</NavLink></li>
-                <li><NavLink to='/cart'>My Cart</NavLink></li>
-            </> : ''
-        }
+        <li><NavLink to='/addproduct'>Add Product</NavLink></li>
+        <li><NavLink to='/cart'>My Cart</NavLink></li>
     </>
 
     const handleSignOut = () => {
