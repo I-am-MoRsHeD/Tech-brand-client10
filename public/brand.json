@@ -2,32 +2,32 @@
     {
       "id": 1,
       "brand_name": "Apple",
-      "image": "https://i.ibb.co/j3XQM9r/apple-macbook.jpg"
+      "image": "https://i.ibb.co/ChPyhyr/apple-logo.jpg"
     },
     {
       "id": 2,
       "brand_name": "Google",
-      "image": "https://i.ibb.co/Zgkv47B/google-nest.jpg"
+      "image": "https://i.ibb.co/wpG5TJY/google-logo.webp"
     },
     {
       "id": 3,
       "brand_name": "Huawei",
-      "image": "https://i.ibb.co/t8qCBsg/huawei-speaker.webp"
+      "image": "https://i.ibb.co/qB1rHZn/huawei-logo.png"
     },
     {
       "id": 4,
       "brand_name": "Samsung",
-      "image": "https://i.ibb.co/1n9NGsZ/samsung-s23-ultra.jpg"
+      "image": "https://i.ibb.co/QngDYMq/samsung-logo.webp"
     },
     {
       "id": 5,
       "brand_name": "Xiaomi",
-      "image": "https://i.ibb.co/9VVHqLL/xiaomi-11-ultra.jpg"
+      "image": "https://i.ibb.co/1LvmCZV/Xiaomi-Logo.png"
     },
     {
       "id": 6,
       "brand_name": "Sony",
-      "image": "https://i.ibb.co/0BYM9VW/sony-mobile.jpg"
+      "image": "https://i.ibb.co/GTKDYcH/Sony-black-background.webp"
     }
   ]
   

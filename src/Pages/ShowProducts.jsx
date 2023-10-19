@@ -56,7 +56,13 @@ const ShowProducts = () => {
                                     </Link>
                                 </div>
                             </div>
-                        </div>) : 'There is no data here'
+                        </div>) :
+                            <div className='flex justify-center items-center h-[100vh]'>
+                                <div>
+                                    <p className="text-5xl">Sorry..!There is no available product..!</p>
+                                    <p className="text-5xl font-semibold">When it will arrive,we will let you know..!</p>
+                                </div>
+                            </div>
                     }
 
                 </div>

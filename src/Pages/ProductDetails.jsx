@@ -13,10 +13,10 @@ const ProductDetails = () => {
         setDetails(findDetails)
     }, [id, productDetails])
 
-    const { _id, name, photo, desc, price, type, brand } = details;
+    const { name, photo, desc, price, type, brand } = details;
 
     const handleAddToCart = () => {
-        const item = { _id, name, photo, desc, price, type, brand };
+        const item = { name, photo, desc, price, type, brand };
         console.log(item)
 
         // sending data to the server
