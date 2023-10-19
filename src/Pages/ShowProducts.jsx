@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
 const ShowProducts = () => {
@@ -14,14 +14,13 @@ const ShowProducts = () => {
         setProduct(findProduct)
     }, [brand])
 
-    console.log(product);
-
     return (
         <div>
+            {/* Slider */}
             <div className='max-w-6xl mx-auto w-full h-[70vh] py-10 px-4 relative'>
-                <div 
-                style={{backgroundImage: `url(${product[2]?.photo})`}}
-                className='w-full h-full rounded-xl bg-center bg-cover duration-500'
+                <div
+                    style={{ backgroundImage: `url(${product[2]?.photo})` }}
+                    className='w-full h-full rounded-xl bg-center bg-cover duration-500'
                 >
                     {/* left arrow */}
                     <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] left-10 text-2xl rounded-full p-2 bg-black/30 text-white cursor-pointer'>
@@ -49,8 +48,12 @@ const ShowProducts = () => {
                                     <p>Ratings: <span className='font-bold'>{item.rating}</span> Stars</p>
                                 </div>
                                 <div className="card-actions justify-between">
-                                    <button className="btn btn-warning">See Details</button>
-                                    <button className="btn btn-accent">Update Info</button>
+                                    <Link to={`/details/${item._id}`}>
+                                        <button className="btn btn-warning">See Details</button>
+                                    </Link>
+                                    <Link to={`/update/${item._id}`}>
+                                        <button className="btn btn-accent">Update Info</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>) : 'There is no data here'
