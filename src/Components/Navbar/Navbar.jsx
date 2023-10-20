@@ -38,7 +38,7 @@ const Navbar = () => {
                     <div>
                         <img className='w-32' src="https://i.ibb.co/jrjtf9j/logo.png" alt="" />
                     </div>
-                    <div className='ml-4'>
+                    <div className='lg:ml-4 lg:pr-0 pr-5'>
                         <button onClick={darkMode} title='Dark Mode'>
                             <FaMoon></FaMoon>
                         </button>

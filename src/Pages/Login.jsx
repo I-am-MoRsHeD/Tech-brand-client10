@@ -96,11 +96,11 @@ const Login = () => {
                     </form>
                 </div>
                 {/* PopUp componenets */}
-                <div className='w-2/4 mt-8 mx-auto'>
+                <div className='w-3/4 mt-8 mx-auto'>
                     <p className='text-center font-bold mb-5 text-2xl'>Or</p>
                     <div className='flex lg:justify-start mt-2 rounded-full py-1 px-2 border-2 bg-slate-600 text-white '>
                         <button onClick={handleGoogle} className='font-semibold p-2 flex items-center'>
-                            <span className='md:mr-9 mr-12 lg:mr-12'><FaGoogle></FaGoogle></span> Continue With Google
+                            <span className='lg:mr-16 mr-10 lg:text-2xl text-base'><FaGoogle></FaGoogle></span> <span className='lg:text-2xl text-sm'>Continue With Google</span>
                         </button>
                     </div>
 

@@ -42,13 +42,13 @@ const ProductDetails = () => {
 
     return (
         <div>
-            <div className='lg:bg-yellow-400 my-14 rounded-tl-full rounded-br-full flex flex-col items-center h-[100vh]'>
-                <h2 className="text-5xl font-extrabold font-serif">{brand} Product</h2>
-                <div className="my-20 max-w-4xl mx-auto lg:flex gap-10 ">
+            <div className='lg:bg-yellow-400 lg:my-14 my-3 rounded-tl-full rounded-br-full flex flex-col items-center lg:h-[100vh]'>
+                <h2 className="lg:text-5xl text-4xl font-extrabold font-serif">{brand} Product</h2>
+                <div className="lg:my-20 my-4 max-w-4xl mx-auto lg:flex gap-10">
                     <div>
                         <figure><img className='lg:w-[500px] w-96 rounded-lg shadow-xl' src={photo} alt="Shoes" /></figure>
                     </div>
-                    <div className="card-body w-1/2 shadow-lg rounded-lg bg-slate-400">
+                    <div className="card-body lg:w-1/2 w-full shadow-lg rounded-lg bg-slate-400">
                         <h2 className="card-title text-3xl font-bold">{name}</h2>
                         <p className='text-sm'>{desc}</p>
                         <p className="text-2xl font-bold">{type}</p>

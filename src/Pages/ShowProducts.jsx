@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -36,45 +35,45 @@ const ShowProducts = () => {
                 {/* slider 1 */}
                 <div
                     className='bg-gray-400 rounded-lg my-10 '>
-                    <div className='ml-96'>
-                        <img className='lg:w-[500px] mx-auto' src="https://i.ibb.co/5cmZP4w/nest-cam.jpg" alt="" />
+                    <div className='lg:ml-96 ml-44'>
+                        <img className='lg:w-[500px] w-44 mx-auto' src="https://i.ibb.co/5cmZP4w/nest-cam.jpg" alt="" />
                     </div>
-                    <div className='absolute space-y-4 ml-20 bottom-72'>
-                        <h2 className="text-3xl font-bold">New Arrival...!</h2>
-                        <h2 className="text-3xl font-bold">Grave it fast.....!</h2>
-                        <p className="text-xl">Use our Promo code to get <span className='text-red-600 text-2xl font-bold'>Discount</span></p>
+                    <div className='absolute lg:w-0 w-40 space-y-4 ml-2 lg:ml-20 bottom-16 lg:bottom-72'>
+                        <h2 className="lg:text-3xl text-xl font-bold">New Arrival...!</h2>
+                        <h2 className="lg:text-3xl text-xl font-bold">Grave it fast.....!</h2>
+                        <p className="lg:text-xl text-base">Use our Promo code to get <span className='text-red-600 lg:text-2xl text-lg font-bold'>Discount</span></p>
                     </div>
                 </div>
                 {/* slider 2 */}
                 <div
                     className='bg-gray-400 py-10 rounded-lg my-10 '>
-                    <div className='ml-96'>
-                        <img className='w-[500px] mx-auto' src="https://i.ibb.co/mJL2MWm/sony-gadgets.webp" alt="" />
+                    <div className='lg:ml-96 ml-44'>
+                        <img className='lg:w-[500px] w-44 mx-auto' src="https://i.ibb.co/mJL2MWm/sony-gadgets.webp" alt="" />
                     </div>
-                    <div className='absolute space-y-4 ml-20 bottom-72'>
-                        <h2 className="text-3xl font-bold">Hot item in the market!</h2>
-                        <h2 className="text-3xl font-bold">Grave it fast.....!</h2>
-                        <p className="text-xl font-semibold">On sale <span className='text-red-600 text-4xl font-bold'>15%</span> for 2 days only</p>
+                    <div className='absolute lg:w-0 w-40 lg:space-y-4 space-y-2  ml-2 lg:ml-20 bottom-16 lg:bottom-72'>
+                        <h2 className="lg:text-3xl text-xl font-bold">Hot item in the market!</h2>
+                        <h2 className="lg:text-3xl text-xl font-bold">Grave it fast.....!</h2>
+                        <p className="text-xl font-semibold">On sale <span className='text-red-600 lg:text-2xl text-lg font-bold'>15%</span> for 2 days only</p>
                     </div>
                 </div>
                 {/* slider 3 */}
                 <div
                     className='bg-gray-400 rounded-lg my-10 '>
-                    <div className='ml-96'>
-                        <img className='w-[500px] mx-auto' src="https://i.ibb.co/wsLgPWW/pixel-watch2.jpg" alt="" />
+                    <div className='lg:ml-96 ml-44'>
+                        <img className='lg:w-[500px] w-44 mx-auto' src="https://i.ibb.co/wsLgPWW/pixel-watch2.jpg" alt="" />
                     </div>
-                    <div className='absolute space-y-4 ml-20 bottom-72'>
-                        <h2 className="text-3xl font-bold">Eid Special...!</h2>
+                    <div className='absolute lg:w-0 w-40 lg:space-y-4 space-y-1  ml-2 lg:ml-20 bottom-16 lg:bottom-72'>
+                        <h2 className="lg:text-3xl text-xl font-bold">Eid Special...!</h2>
                         <p className="text-xl">On Sale<span className='text-red-600 text-2xl font-bold'> 45%</span></p>
-                        <h2 className="text-3xl font-semibold">Few items stock</h2>
-                        <h2 className="text-3xl font-semibold">Come First,Take first!</h2>
+                        <h2 className="lg:text-3xl text-xl  font-semibold">Few items stock</h2>
+                        <h2 className="lg:text-2xl text-lg font-semibold">Come First,Take first!</h2>
                     </div>
                 </div>
             </Slider>
 
             {/* Products section */}
             <div className='my-16 bg-blue-600 rounded-t-full'>
-                <h2 className="text-5xl p-5 font-bold text-center font-serif">Our Products</h2>
+                <h2 className="lg:text-5xl text-2xl p-5 font-bold text-center font-serif">Our Products</h2>
                 <div className='grid grid-cols-1 gap-20 md:grid-cols-2 max-w-4xl my-5 pb-5  mx-auto'>
                     {
                         product ? product?.map(item => <div key={item._id} className="card w-96 bg-slate-300 shadow-xl">

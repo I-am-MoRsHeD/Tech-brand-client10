@@ -10,7 +10,7 @@ const MyCart = () => {
 
     return (
         <div>
-            <div className='my-10'>
+            <div className='lg:my-10 my-3'>
                 <h2 className="text-5xl text-center font-bold">Your Items</h2>
                 {
                     carts?.map(item => <Cart

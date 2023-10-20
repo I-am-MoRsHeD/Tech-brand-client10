@@ -38,8 +38,8 @@ const AddProduct = () => {
             })
     }
     return (
-        <div className='my-10 py-10 text-white rounded-tl-full bg-cyan-600'>
-            <h2 className="text-4xl mb-10 font-semibold text-center">Add a Product, <br /> Whatever you want</h2>
+        <div className='lg:my-10 my-3 py-10 text-white rounded-tl-full rounded-tr-full bg-cyan-600'>
+            <h2 className="lg:text-4xl text-2xl mb-10 font-semibold text-center">Add a Product, <br /> Whatever you want</h2>
             <form onSubmit={handleAddProduct}>
                 <div className='w-5/6 flex my-10 gap-8 mx-auto '>
                     <div className='w-1/2'>

@@ -41,8 +41,8 @@ const Cart = ({ cart, carts, setCarts }) => {
     return (
         <div>
             <div className="hero">
-                <div className="hero-content my-10 bg-gray-200 py-10 gap-5 flex-col w-3/4 lg:flex-row">
-                    <img src={photo} className="max-w-sm rounded-lg shadow-2xl" />
+                <div className="hero-content lg:my-10 my-3 bg-gray-200 lg:py-10 py-3 gap-5 flex-col lg:w-3/4  lg:flex-row">
+                    <img src={photo} className="lg:max-w-sm rounded-lg shadow-2xl" />
                     <div>
                         <h1 className="text-4xl font-bold">{name}</h1>
                         <p className="py-6">Price: TK <span className='font-bold text-3xl'>{price}</span></p>

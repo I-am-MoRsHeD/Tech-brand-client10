@@ -51,7 +51,7 @@ const UpdateProduct = () => {
 
     }
     return (
-        <div className='my-10 py-10 text-white rounded-tr-full rounded-bl-full bg-violet-500'>
+        <div className='my-10 py-10 lg:text-white rounded-tr-full rounded-bl-full bg-violet-500'>
             <h2 className="text-4xl mb-10 font-semibold text-center">Update Your Product</h2>
             <form onSubmit={handleUpdateProduct}>
                 <div className='w-5/6 flex my-10 gap-8 mx-auto '>
