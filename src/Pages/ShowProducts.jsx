@@ -2,18 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const shops = [
-    {
-        url: 'https://i.ibb.co/BN0VgyL/shop1.jpg',
-    },
-    {
-        url: 'https://i.ibb.co/cxXNtbR/shop2.jpg'
-    },
-    {
-        url: 'https://i.ibb.co/wdw0D7N/shop3.jpg'
-    }
-]
 
 const ShowProducts = () => {
     const [product, setProduct] = useState('');
@@ -27,40 +19,59 @@ const ShowProducts = () => {
     }, [brand])
 
 
-    // for sliding left and right
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const prevSlide = () => {
-        const isFirstSlide = currentIndex === 0;
-        const newSlide = isFirstSlide ? shops.length - 1 : currentIndex - 1;
-        setCurrentIndex(newSlide);
-    }
-    const nextSlide = () =>{
-        const isLastSlide = currentIndex === shops.length - 1;
-        const newSlide = isLastSlide ? 0 : currentIndex + 1;
-        setCurrentIndex(newSlide)
-    }
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
 
     return (
         <div>
-            {/* Slider */}
-            <div className='max-w-6xl my-10 mx-auto w-full h-[70vh] py-10 px-4 relative'>
-                <div
-                    style={{ backgroundImage: `url(${shops[currentIndex]?.url})` }}
-                    className='w-full h-full rounded-xl bg-center bg-cover duration-500'
-                >
-                    
 
-                    {/* left arrow */}
-                    <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] left-10 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer'>
-                        <AiOutlineArrowLeft onClick={prevSlide} size={30}></AiOutlineArrowLeft>
+
+
+            <Slider {...settings}>
+                {/* slider 1 */}
+                <div
+                    className='bg-gray-400 rounded-lg my-10 '>
+                    <div className='ml-96'>
+                        <img className='lg:w-[500px] mx-auto' src="https://i.ibb.co/5cmZP4w/nest-cam.jpg" alt="" />
                     </div>
-                    {/* right arrow */}
-                    <div className='absolute top-[50%] -translate-x-0 translate-y-[-50%] right-10 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer'>
-                        <AiOutlineArrowRight onClick={nextSlide} size={30}></AiOutlineArrowRight>
+                    <div className='absolute space-y-4 ml-20 bottom-72'>
+                        <h2 className="text-3xl font-bold">New Arrival...!</h2>
+                        <h2 className="text-3xl font-bold">Grave it fast.....!</h2>
+                        <p className="text-xl">Use our Promo code to get <span className='text-red-600 text-2xl font-bold'>Discount</span></p>
                     </div>
                 </div>
+                {/* slider 2 */}
+                <div
+                    className='bg-gray-400 py-10 rounded-lg my-10 '>
+                    <div className='ml-96'>
+                        <img className='w-[500px] mx-auto' src="https://i.ibb.co/mJL2MWm/sony-gadgets.webp" alt="" />
+                    </div>
+                    <div className='absolute space-y-4 ml-20 bottom-72'>
+                        <h2 className="text-3xl font-bold">Hot item in the market!</h2>
+                        <h2 className="text-3xl font-bold">Grave it fast.....!</h2>
+                        <p className="text-xl font-semibold">On sale <span className='text-red-600 text-4xl font-bold'>15%</span> for 2 days only</p>
+                    </div>
+                </div>
+                {/* slider 3 */}
+                <div
+                    className='bg-gray-400 rounded-lg my-10 '>
+                    <div className='ml-96'>
+                        <img className='w-[500px] mx-auto' src="https://i.ibb.co/wsLgPWW/pixel-watch2.jpg" alt="" />
+                    </div>
+                    <div className='absolute space-y-4 ml-20 bottom-72'>
+                        <h2 className="text-3xl font-bold">Eid Special...!</h2>
+                        <p className="text-xl">On Sale<span className='text-red-600 text-2xl font-bold'> 45%</span></p>
+                        <h2 className="text-3xl font-semibold">Few items stock</h2>
+                        <h2 className="text-3xl font-semibold">Come First,Take first!</h2>
+                    </div>
+                </div>
+            </Slider>
 
-            </div>
             {/* Products section */}
             <div className='my-16 bg-blue-600 rounded-t-full'>
                 <h2 className="text-5xl p-5 font-bold text-center font-serif">Our Products</h2>

@@ -30,8 +30,8 @@ const Branch = () => {
     }
     return (
         <div className='my-5'>
-            <h2 className="text-5xl text-center font-bold">Our Branches</h2>
-            <h2 className="text-5xl mt-5 text-center font-bold"> Have a visit..!It will be Honour for Us..!</h2>
+            <h2 className="lg:text-7xl text-5xl text-center font-bold">Our Branches</h2>
+            <h2 className="lg:text-5xl text-3xl mt-5 text-center font-bold"> Have a visit..!It will be Honour for Us..!</h2>
             <div className='max-w-6xl my-10 mx-auto w-full h-[100vh] py-10 px-4 relative'>
                 <div
                     style={{ backgroundImage: `url(${shops[currentIndex]?.url})` }}

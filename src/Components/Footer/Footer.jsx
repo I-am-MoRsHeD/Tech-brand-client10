@@ -36,7 +36,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='mt-20'>
-                <h2 className="text-9xl font-mono text-orange-400 text-center">
+                <h2 className="lg:text-9xl text-7xl font-mono text-orange-400 text-center">
                     <span>M</span>
                     <span className='ml-5'>&</span>
                     <span className='ml-5'>H</span>
