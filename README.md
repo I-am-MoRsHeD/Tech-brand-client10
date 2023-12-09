@@ -1,7 +1,7 @@
 
 
 
-# "JobsWorld" features
+# "Tech Brand" features
 
 - one can add a product
 - one can purchase or add to cart a product or multiple
